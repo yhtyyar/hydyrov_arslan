@@ -48,19 +48,45 @@ export function Hero() {
           </div>
 
           <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-teal-100 to-teal-50 shadow-2xl">
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-dental-teal/10">
-                    <Award className="h-10 w-10 text-dental-teal" />
+            <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-teal-100 via-teal-50 to-white shadow-2xl ring-4 ring-white">
+              {/* Doctor photo placeholder with gradient */}
+              <div className="flex h-full items-center justify-center relative">
+                {/* Decorative circles */}
+                <div className="absolute top-10 left-10 w-32 h-32 bg-teal-200/40 rounded-full blur-2xl" />
+                <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-2xl" />
+                
+                <div className="text-center p-8 relative z-10">
+                  {/* Avatar circle */}
+                  <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-dental-teal to-teal-600 shadow-xl">
+                    <span className="text-5xl">👨‍⚕️</span>
                   </div>
-                  <p className="text-sm text-gray-500">
-                    Фото доктора
+                  <p className="text-base font-medium text-gray-700">
+                    Dr. Hydyrov Arslan
                   </p>
-                  <p className="text-xs text-gray-400 mt-1">
-                    Замените на профессиональное фото
+                  <p className="text-sm text-gray-500 mt-1">
+                    Главный врач · Стоматолог
+                  </p>
+                  <div className="mt-4 flex items-center justify-center gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <span key={i} className="text-yellow-400 text-sm">⭐</span>
+                    ))}
+                    <span className="text-sm text-gray-600 ml-1">4.9</span>
+                  </div>
+                  <p className="text-xs text-gray-400 mt-4 bg-white/60 backdrop-blur-sm px-3 py-1.5 rounded-full inline-block">
+                    🖼️ Замените на профессиональное фото
                   </p>
                 </div>
+              </div>
+            </div>
+            
+            {/* Floating badge */}
+            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-3 flex items-center gap-2">
+              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                <span className="text-green-600 font-bold text-sm">7+</span>
+              </div>
+              <div>
+                <p className="text-xs font-medium text-gray-900">Лет опыта</p>
+                <p className="text-[10px] text-gray-500">500+ пациентов</p>
               </div>
             </div>
           </div>
