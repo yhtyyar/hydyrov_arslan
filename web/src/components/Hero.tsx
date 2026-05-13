@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { Shield, Award, Users, Star } from "lucide-react";
+import Image from "next/image";
+import { Shield, Award, Users, Star, Phone } from "lucide-react";
 
 const stats = [
   { icon: Users, label: "Довольных пациентов", value: "500+" },
@@ -10,93 +11,123 @@ const stats = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white via-teal-50/30 to-white">
-      <div className="mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28">
+    <section className="relative overflow-hidden bg-gradient-to-br from-white via-teal-50/40 to-white">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-teal-100/40 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 -left-20 w-72 h-72 bg-blue-50/50 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-4 py-20 lg:px-8 lg:py-28">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          {/* Left: Text content */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-teal-50 px-4 py-1.5 text-sm text-dental-teal mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full bg-teal-50 border border-teal-100 px-4 py-1.5 text-sm text-dental-teal mb-6 shadow-sm">
               <Shield className="h-4 w-4" />
               Профессиональная стоматология
             </div>
 
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl">
+            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-6xl leading-tight">
               Ваша{" "}
               <span className="text-dental-teal">идеальная улыбка</span>{" "}
               начинается здесь
             </h1>
 
-            <p className="mt-6 text-lg text-gray-600 max-w-xl">
-              Доктор Хыдыров Арслан — опытный стоматолог с индивидуальным
-              подходом к каждому пациенту. Современное оборудование,
-              безболезненное лечение, гарантия результата.
+            <p className="mt-6 text-lg text-gray-600 max-w-xl leading-relaxed">
+              Доктор Арслан Хыдыров — стоматолог с 7-летним опытом. Индивидуальный
+              подход, современное оборудование, безболезненное лечение и гарантия
+              результата.
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 href="/booking"
-                className="rounded-lg bg-dental-teal px-6 py-3 text-base font-semibold text-white shadow-lg shadow-teal-500/25 transition-all hover:bg-dental-teal/90 hover:shadow-xl hover:shadow-teal-500/30"
+                className="rounded-xl bg-dental-teal px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-500/25 transition-all hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5"
               >
                 Записаться на приём
               </Link>
-              <Link
-                href="/portfolio"
-                className="rounded-lg border border-gray-300 bg-white px-6 py-3 text-base font-semibold text-gray-700 transition-colors hover:bg-gray-50"
+              <a
+                href="tel:+79050092127"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-dental-teal bg-white px-7 py-3.5 text-base font-semibold text-dental-teal transition-all hover:bg-teal-50 hover:-translate-y-0.5"
               >
-                Посмотреть работы
-              </Link>
+                <Phone className="h-4 w-4" />
+                +7 905 009-21-27
+              </a>
+            </div>
+
+            <div className="mt-8 flex items-center gap-3">
+              <div className="flex -space-x-2">
+                {[...Array(4)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="w-8 h-8 rounded-full bg-gradient-to-br from-teal-400 to-teal-600 border-2 border-white flex items-center justify-center text-white text-xs font-bold"
+                  >
+                    {["А", "М", "Д", "Н"][i]}
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-gray-500">
+                <span className="font-semibold text-gray-700">500+</span> пациентов
+                доверяют нам свою улыбку
+              </p>
             </div>
           </div>
 
+          {/* Right: Doctor photo */}
           <div className="relative">
-            <div className="aspect-[4/5] overflow-hidden rounded-2xl bg-gradient-to-br from-teal-100 via-teal-50 to-white shadow-2xl ring-4 ring-white">
-              {/* Doctor photo placeholder with gradient */}
-              <div className="flex h-full items-center justify-center relative">
-                {/* Decorative circles */}
-                <div className="absolute top-10 left-10 w-32 h-32 bg-teal-200/40 rounded-full blur-2xl" />
-                <div className="absolute bottom-10 right-10 w-40 h-40 bg-blue-200/30 rounded-full blur-2xl" />
-                
-                <div className="text-center p-8 relative z-10">
-                  {/* Avatar circle */}
-                  <div className="mx-auto mb-6 flex h-32 w-32 items-center justify-center rounded-full bg-gradient-to-br from-dental-teal to-teal-600 shadow-xl">
-                    <span className="text-5xl">👨‍⚕️</span>
-                  </div>
-                  <p className="text-base font-medium text-gray-700">
-                    Dr. Hydyrov Arslan
-                  </p>
-                  <p className="text-sm text-gray-500 mt-1">
-                    Главный врач · Стоматолог
-                  </p>
-                  <div className="mt-4 flex items-center justify-center gap-1">
-                    {[...Array(5)].map((_, i) => (
-                      <span key={i} className="text-yellow-400 text-sm">⭐</span>
-                    ))}
-                    <span className="text-sm text-gray-600 ml-1">4.9</span>
-                  </div>
-                  <p className="text-xs text-gray-400 mt-4 bg-white/60 backdrop-blur-sm px-3 py-1.5 rounded-full inline-block">
-                    🖼️ Замените на профессиональное фото
-                  </p>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white">
+              <Image
+                src="/images/doctor.jpg"
+                alt="Арслан Хыдыров — стоматолог"
+                fill
+                className="object-cover object-top"
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Overlay gradient at bottom */}
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute bottom-6 left-6 right-6">
+                <p className="text-white font-semibold text-lg drop-shadow-lg">
+                  Арслан Хыдыров
+                </p>
+                <p className="text-white/80 text-sm drop-shadow">
+                  Врач-стоматолог · 7 лет практики
+                </p>
+                <div className="mt-2 flex items-center gap-1">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400 drop-shadow" />
+                  ))}
+                  <span className="text-white/90 text-sm ml-1 drop-shadow">4.9</span>
                 </div>
               </div>
             </div>
-            
-            {/* Floating badge */}
-            <div className="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-lg p-3 flex items-center gap-2">
-              <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
-                <span className="text-green-600 font-bold text-sm">7+</span>
+
+            {/* Floating badge — experience */}
+            <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl p-4 flex items-center gap-3 border border-gray-100">
+              <div className="w-12 h-12 rounded-xl bg-dental-teal flex items-center justify-center shadow-md">
+                <span className="text-white font-bold text-lg">7+</span>
               </div>
               <div>
-                <p className="text-xs font-medium text-gray-900">Лет опыта</p>
-                <p className="text-[10px] text-gray-500">500+ пациентов</p>
+                <p className="text-sm font-bold text-gray-900">Лет опыта</p>
+                <p className="text-xs text-gray-500">500+ пациентов</p>
               </div>
+            </div>
+
+            {/* Floating badge — guarantee */}
+            <div className="absolute -top-4 -right-4 bg-dental-teal rounded-2xl shadow-xl p-4 text-white border border-teal-600">
+              <Shield className="h-6 w-6 mb-1" />
+              <p className="text-xs font-bold">Гарантия</p>
+              <p className="text-xs opacity-80">качества</p>
             </div>
           </div>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-6 sm:grid-cols-4">
+        {/* Stats row */}
+        <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="rounded-xl border bg-white p-5 text-center shadow-sm"
+              className="rounded-2xl border bg-white/80 backdrop-blur-sm p-5 text-center shadow-sm hover:shadow-md transition-shadow"
             >
               <stat.icon className="mx-auto h-6 w-6 text-dental-teal mb-2" />
               <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
