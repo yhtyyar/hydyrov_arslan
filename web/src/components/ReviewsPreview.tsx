@@ -1,9 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Star, ArrowRight, User } from "lucide-react";
-import { ReviewCardSkeleton } from "@/components/ui/Skeleton";
+import { Star, ArrowRight } from "lucide-react";
 
 interface Review {
   id: string;
@@ -13,8 +11,7 @@ interface Review {
   createdAt: string;
 }
 
-// Fallback reviews when API is not available
-const fallbackReviews: Review[] = [
+const reviews: Review[] = [
   {
     id: "1",
     rating: 5,
@@ -81,32 +78,7 @@ function AvatarPlaceholder({ name }: { name: string }) {
 }
 
 export function ReviewsPreview() {
-  const [reviews, setReviews] = useState<Review[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchReviews = async () => {
-      try {
-        setIsLoading(true);
-        const res = await fetch("/api/reviews?limit=3");
-        const data = await res.json();
-        if (data.success && data.data?.length > 0) {
-          setReviews(data.data.slice(0, 3));
-        } else {
-          setReviews(fallbackReviews);
-        }
-      } catch {
-        setReviews(fallbackReviews);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchReviews();
-  }, []);
-
-  const displayReviews = reviews.length > 0 ? reviews : fallbackReviews;
-  const averageRating = displayReviews.reduce((sum, r) => sum + r.rating, 0) / displayReviews.length;
+  const averageRating = reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length;
 
   return (
     <section className="py-20 bg-dental-surface">
@@ -122,7 +94,7 @@ export function ReviewsPreview() {
             <div className="mt-3 flex items-center gap-2">
               <StarRating rating={Math.round(averageRating)} />
               <span className="text-lg font-semibold text-gray-900">{averageRating.toFixed(1)}</span>
-              <span className="text-sm text-gray-500">({displayReviews.length} отзывов)</span>
+              <span className="text-sm text-gray-500">({reviews.length} отзывов)</span>
             </div>
           </div>
           <Link
@@ -133,15 +105,8 @@ export function ReviewsPreview() {
           </Link>
         </div>
 
-        {isLoading ? (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {[...Array(3)].map((_, i) => (
-              <ReviewCardSkeleton key={i} />
-            ))}
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {displayReviews.map((review) => (
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {reviews.map((review) => (
               <div
                 key={review.id}
                 className="rounded-xl border bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
@@ -162,7 +127,6 @@ export function ReviewsPreview() {
               </div>
             ))}
           </div>
-        )}
       </div>
     </section>
   );

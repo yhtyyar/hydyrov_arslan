@@ -40,19 +40,16 @@ export function Hero() {
             </p>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link
-                href="/booking"
-                className="rounded-xl bg-dental-teal px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-500/25 transition-all hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5"
-              >
-                Записаться на приём
-              </Link>
               <a
                 href="tel:+79050092127"
-                className="inline-flex items-center gap-2 rounded-xl border-2 border-dental-teal bg-white px-7 py-3.5 text-base font-semibold text-dental-teal transition-all hover:bg-teal-50 hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-xl bg-dental-teal px-7 py-3.5 text-base font-semibold text-white shadow-lg shadow-teal-500/25 transition-all hover:bg-teal-700 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5"
               >
                 <Phone className="h-4 w-4" />
                 +7 905 009-21-27
               </a>
+              <span className="inline-flex items-center gap-2 rounded-xl border-2 border-dental-teal bg-white px-7 py-3.5 text-base font-semibold text-dental-teal">
+                Бесплатная консультация
+              </span>
             </div>
 
             <div className="mt-8 flex items-center gap-3">

@@ -82,6 +82,22 @@ export function ContactSection() {
               </div>
             </a>
 
+            {/* Address */}
+            <div className="flex items-start gap-4 rounded-2xl border bg-white p-5 shadow-sm">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-500">
+                <MapPin className="h-5 w-5" />
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-gray-900">Адрес клиники</h3>
+                <p className="text-sm text-gray-600 mt-1">
+                  г. Саранск, Республика Мордовия
+                </p>
+                <p className="text-xs text-gray-400 mt-0.5">
+                  Точный адрес будет указан при записи
+                </p>
+              </div>
+            </div>
+
             {/* Working hours */}
             <div className="flex items-start gap-4 rounded-2xl border bg-white p-5 shadow-sm">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-500">

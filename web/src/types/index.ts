@@ -1,5 +1,3 @@
-import { AppointmentStatus, Role } from "@prisma/client";
-
 // ─── API Response Types ──────────────────────────────────
 
 export interface ApiResponse<T = unknown> {
@@ -46,7 +44,7 @@ export interface BookingResponse {
   startTime: string;
   endTime: string;
   serviceName: string;
-  status: AppointmentStatus;
+  status: "pending" | "confirmed" | "completed" | "cancelled";
 }
 
 // ─── Service Types ───────────────────────────────────────

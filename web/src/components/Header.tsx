@@ -43,18 +43,18 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <a
-            href="tel:+998901234567"
+            href="tel:+79050092127"
             className="hidden sm:flex items-center gap-1.5 text-sm text-gray-600 hover:text-dental-teal transition-colors"
           >
             <Phone className="h-4 w-4" />
-            +998 90 123 45 67
+            +7 905 009-21-27
           </a>
-          <Link
-            href="/booking"
+          <a
+            href="tel:+79050092127"
             className="rounded-lg bg-dental-teal px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-dental-teal/90"
           >
-            Записаться
-          </Link>
+            Позвонить
+          </a>
           <button
             type="button"
             className="md:hidden -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"

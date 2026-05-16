@@ -4,35 +4,15 @@ services:
       context: ./web
       dockerfile: Dockerfile
     ports:
-      - "3001:3000"
+      - "3000:3000"
     environment:
       - NODE_ENV=production
-      - DATABASE_URL=postgresql://dental:dental@db:5432/dental
-      - NEXTAUTH_SECRET=super-secret-dental-key-change-in-prod
-      - NEXTAUTH_URL=http://localhost:3000
       - NEXT_PUBLIC_APP_URL=http://localhost:3000
       - NEXT_PUBLIC_APP_NAME=Арслан Хыдыров — Стоматолог
-    depends_on:
-      db:
-        condition: service_healthy
     restart: unless-stopped
-
-  db:
-    image: postgres:16-alpine
-    environment:
-      - POSTGRES_USER=dental
-      - POSTGRES_PASSWORD=dental
-      - POSTGRES_DB=dental
-    ports:
-      - "5432:5432"
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U dental -d dental"]
-      interval: 5s
-      timeout: 5s
-      retries: 10
-    restart: unless-stopped
-
-volumes:
-  pgdata:
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
