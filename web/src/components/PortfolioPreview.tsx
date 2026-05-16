@@ -10,21 +10,21 @@ const portfolioItems = [
     title: "Имплантация",
     description: "Восстановление жевательных зубов в области 44–46",
     category: "Хирургия",
-    preview: "/images/implant-1.jpg",
+    preview: "./images/implant-1.jpg",
   },
   {
     id: "2",
     title: "Лечение кариеса",
     description: "Устранение кариеса с эстетической реставрацией",
     category: "Терапия",
-    preview: "/images/caries-1.jpg",
+    preview: "./images/caries-1.jpg",
   },
   {
     id: "3",
     title: "Микропротезирование (Table Tops)",
     description: "Керамические накладки для восстановления формы зубов",
     category: "Ортопедия",
-    preview: "/images/tabletops-1.jpg",
+    preview: "./images/tabletops-1.jpg",
   },
 ];
 
