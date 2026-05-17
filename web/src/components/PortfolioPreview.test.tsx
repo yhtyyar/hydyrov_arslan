@@ -13,7 +13,7 @@ describe('PortfolioPreview Component', () => {
     render(<PortfolioPreview />)
     expect(screen.getByText('Имплантация')).toBeInTheDocument()
     expect(screen.getByText('Лечение кариеса')).toBeInTheDocument()
-    expect(screen.getByText('Микропротезирование')).toBeInTheDocument()
+    expect(screen.getByText('Микропротезирование (Table Tops)')).toBeInTheDocument()
   })
 
   it('renders portfolio images with correct src', () => {
@@ -70,7 +70,7 @@ describe('PortfolioPreview Component', () => {
     // Check for images with specific alt text
     expect(screen.getByAltText('Имплантация')).toBeInTheDocument()
     expect(screen.getByAltText('Лечение кариеса')).toBeInTheDocument()
-    expect(screen.getByAltText('Микропротезирование')).toBeInTheDocument()
+    expect(screen.getByAltText('Микропротезирование (Table Tops)')).toBeInTheDocument()
   })
 
   it('uses relative image paths', () => {
@@ -82,7 +82,7 @@ describe('PortfolioPreview Component', () => {
     const cariesImage = screen.getByAltText('Лечение кариеса')
     expect(cariesImage).toHaveAttribute('src', './images/caries-1.webp')
     
-    const tabletopImage = screen.getByAltText('Микропротезирование')
+    const tabletopImage = screen.getByAltText('Микропротезирование (Table Tops)')
     expect(tabletopImage).toHaveAttribute('src', './images/tabletops-1.webp')
   })
 })

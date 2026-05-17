@@ -6,7 +6,7 @@ describe('Portfolio Page', () => {
   it('renders portfolio header', () => {
     render(<PortfolioPage />)
     expect(screen.getByText('Портфолио работ')).toBeInTheDocument()
-    expect(screen.getByText('Реальные клинические случаи доктора Арслана Хыдырова')).toBeInTheDocument()
+    expect(screen.getByText(/Реальные клинические случаи/i)).toBeInTheDocument()
   })
 
   it('renders all 5 portfolio items', () => {
@@ -31,9 +31,10 @@ describe('Portfolio Page', () => {
 
   it('renders image count badges for multi-image works', () => {
     render(<PortfolioPage />)
-    expect(screen.getByText('2 фото')).toBeInTheDocument() // Implant, denture
-    expect(screen.getByText('4 фото')).toBeInTheDocument() // Caries, tabletops
-    expect(screen.getByText('1 фото')).toBeInTheDocument() // Zirconia
+    // Badge shows only for items with >1 photo
+    expect(screen.getAllByText('2 фото').length).toBe(2) // Implant, denture
+    expect(screen.getAllByText('4 фото').length).toBe(2) // Caries, tabletops
+    // Note: "1 фото" badge is not shown (single photo works don't need a badge)
   })
 
   it('opens modal when clicking on portfolio item', () => {

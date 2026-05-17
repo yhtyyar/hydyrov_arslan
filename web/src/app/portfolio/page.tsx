@@ -88,6 +88,7 @@ function CarouselModal({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4">
       <button
         onClick={onClose}
+        aria-label="Close"
         className="absolute top-4 right-4 text-white hover:text-gray-300"
       >
         <X className="h-8 w-8" />
