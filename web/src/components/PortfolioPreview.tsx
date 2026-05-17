@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
@@ -60,13 +59,11 @@ export function PortfolioPreview() {
               className="group overflow-hidden rounded-2xl border bg-white shadow-sm transition-all hover:shadow-xl hover:-translate-y-1"
             >
               {/* Preview image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
+              <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                <img
                   src={item.preview}
                   alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Category badge */}
                 <div className="absolute top-3 left-3">

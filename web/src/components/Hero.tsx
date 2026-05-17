@@ -72,14 +72,11 @@ export function Hero() {
 
           {/* Right: Doctor photo */}
           <div className="relative">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white">
-              <Image
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white" style={{ aspectRatio: '4/5' }}>
+              <img
                 src="./images/doctor.webp"
                 alt="Арслан Хыдыров — стоматолог"
-                fill
-                className="object-cover object-top"
-                priority
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="w-full h-full object-cover object-top"
               />
               {/* Overlay gradient at bottom */}
               <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/40 to-transparent" />

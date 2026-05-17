@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 
 type CarouselItem = {
@@ -95,13 +94,11 @@ function CarouselModal({
       </button>
 
       <div className="relative max-w-4xl w-full">
-        <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-900">
-          <Image
+        <div className="relative overflow-hidden rounded-xl bg-gray-900" style={{ aspectRatio: '4/3' }}>
+          <img
             src={item.images[currentIndex]}
             alt={`${item.title} — фото ${currentIndex + 1}`}
-            fill
-            className="object-contain"
-            sizes="(max-width: 896px) 100vw, 896px"
+            className="w-full h-full object-contain"
           />
           <div className="absolute top-4 left-4 bg-dental-teal text-white text-sm font-medium px-3 py-1 rounded-full">
             {currentIndex + 1} / {item.images.length}
@@ -141,12 +138,10 @@ function CarouselModal({
                   idx === currentIndex ? "border-dental-teal" : "border-transparent"
                 }`}
               >
-                <Image
+                <img
                   src={img}
                   alt={`Миниатюра ${idx + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="64px"
+                  className="w-full h-full object-cover"
                 />
               </button>
             ))}
@@ -185,13 +180,11 @@ export default function PortfolioPage() {
               className="group text-left overflow-hidden rounded-2xl border bg-white shadow-sm transition-all hover:shadow-xl hover:-translate-y-1"
             >
               {/* Preview Image */}
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
+              <div className="relative overflow-hidden" style={{ aspectRatio: '4/3' }}>
+                <img
                   src={item.images[0]}
                   alt={item.title}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3">
                   <span className="inline-block rounded-full bg-white/90 backdrop-blur-sm px-3 py-1 text-xs font-medium text-gray-700 shadow-sm">
