@@ -19,8 +19,8 @@ const portfolioItems: CarouselItem[] = [
     category: "Хирургия",
     description: "Восстановление трёх жевательных зубов с помощью дентальных имплантов.",
     images: [
-      "./images/implant-1.jpg",
-      "./images/implant-2.jpg",
+      "./images/implant-1.webp",
+      "./images/implant-2.webp",
     ],
   },
   {
@@ -29,10 +29,10 @@ const portfolioItems: CarouselItem[] = [
     category: "Терапия",
     description: "Профессиональное лечение кариеса с эстетической реставрацией.",
     images: [
-      "./images/caries-1.jpg",
-      "./images/caries-2.jpg",
-      "./images/caries-3.jpg",
-      "./images/caries-4.jpg",
+      "./images/caries-1.webp",
+      "./images/caries-2.webp",
+      "./images/caries-3.webp",
+      "./images/caries-4.webp",
     ],
   },
   {
@@ -41,10 +41,10 @@ const portfolioItems: CarouselItem[] = [
     category: "Ортопедия",
     description: "Керамические накладки для восстановления высоты и формы зубов.",
     images: [
-      "./images/tabletops-1.jpg",
-      "./images/tabletops-2.jpg",
-      "./images/tabletops-3.jpg",
-      "./images/tabletops-4.jpg",
+      "./images/tabletops-1.webp",
+      "./images/tabletops-2.webp",
+      "./images/tabletops-3.webp",
+      "./images/tabletops-4.webp",
     ],
   },
   {
@@ -53,8 +53,8 @@ const portfolioItems: CarouselItem[] = [
     category: "Ортопедия",
     description: "Изготовление полного съёмного протеза для комфортного жевания.",
     images: [
-      "./images/denture-1.jpg",
-      "./images/denture-2.jpg",
+      "./images/denture-1.webp",
+      "./images/denture-2.webp",
     ],
   },
   {
@@ -63,7 +63,7 @@ const portfolioItems: CarouselItem[] = [
     category: "Ортопедия",
     description: "Протезирование безметалловыми циркониевыми коронками.",
     images: [
-      "./images/zirconia.jpg",
+      "./images/zirconia.webp",
     ],
   },
 ];

@@ -74,7 +74,7 @@ export function Hero() {
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white">
               <Image
-                src="./images/doctor.jpg"
+                src="./images/doctor.webp"
                 alt="Арслан Хыдыров — стоматолог"
                 fill
                 className="object-cover object-top"
