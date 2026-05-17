@@ -15,7 +15,15 @@ export default defineConfig({
         'src/test/',
         '**/*.d.ts',
         '**/*.config.*',
+        'src/app/layout.tsx',
+        'src/app/page.tsx',
       ],
+      thresholds: {
+        lines: 60,
+        functions: 60,
+        branches: 50,
+        statements: 60,
+      },
     },
   },
   resolve: {
