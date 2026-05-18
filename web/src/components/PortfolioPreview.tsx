@@ -9,21 +9,21 @@ const portfolioItems = [
     title: "Имплантация",
     description: "Восстановление жевательных зубов в области 44–46",
     category: "Хирургия",
-    preview: "./images/implant-1.webp",
+    preview: "/hydyrov_arslan/images/implant-1.webp",
   },
   {
     id: "2",
     title: "Лечение кариеса",
     description: "Устранение кариеса с эстетической реставрацией",
     category: "Терапия",
-    preview: "./images/caries-1.webp",
+    preview: "/hydyrov_arslan/images/caries-1.webp",
   },
   {
     id: "3",
     title: "Микропротезирование (Table Tops)",
     description: "Керамические накладки для восстановления формы зубов",
     category: "Ортопедия",
-    preview: "./images/tabletops-1.webp",
+    preview: "/hydyrov_arslan/images/tabletops-1.webp",
   },
 ];
 

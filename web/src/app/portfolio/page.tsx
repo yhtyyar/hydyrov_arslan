@@ -18,8 +18,8 @@ const portfolioItems: CarouselItem[] = [
     category: "Хирургия",
     description: "Восстановление трёх жевательных зубов с помощью дентальных имплантов.",
     images: [
-      "./images/implant-1.webp",
-      "./images/implant-2.webp",
+      "/hydyrov_arslan/images/implant-1.webp",
+      "/hydyrov_arslan/images/implant-2.webp",
     ],
   },
   {
@@ -28,10 +28,10 @@ const portfolioItems: CarouselItem[] = [
     category: "Терапия",
     description: "Профессиональное лечение кариеса с эстетической реставрацией.",
     images: [
-      "./images/caries-1.webp",
-      "./images/caries-2.webp",
-      "./images/caries-3.webp",
-      "./images/caries-4.webp",
+      "/hydyrov_arslan/images/caries-1.webp",
+      "/hydyrov_arslan/images/caries-2.webp",
+      "/hydyrov_arslan/images/caries-3.webp",
+      "/hydyrov_arslan/images/caries-4.webp",
     ],
   },
   {
@@ -40,10 +40,10 @@ const portfolioItems: CarouselItem[] = [
     category: "Ортопедия",
     description: "Керамические накладки для восстановления высоты и формы зубов.",
     images: [
-      "./images/tabletops-1.webp",
-      "./images/tabletops-2.webp",
-      "./images/tabletops-3.webp",
-      "./images/tabletops-4.webp",
+      "/hydyrov_arslan/images/tabletops-1.webp",
+      "/hydyrov_arslan/images/tabletops-2.webp",
+      "/hydyrov_arslan/images/tabletops-3.webp",
+      "/hydyrov_arslan/images/tabletops-4.webp",
     ],
   },
   {
@@ -52,8 +52,8 @@ const portfolioItems: CarouselItem[] = [
     category: "Ортопедия",
     description: "Изготовление полного съёмного протеза для комфортного жевания.",
     images: [
-      "./images/denture-1.webp",
-      "./images/denture-2.webp",
+      "/hydyrov_arslan/images/denture-1.webp",
+      "/hydyrov_arslan/images/denture-2.webp",
     ],
   },
   {
@@ -62,7 +62,7 @@ const portfolioItems: CarouselItem[] = [
     category: "Ортопедия",
     description: "Протезирование безметалловыми циркониевыми коронками.",
     images: [
-      "./images/zirconia.webp",
+      "/hydyrov_arslan/images/zirconia.webp",
     ],
   },
 ];

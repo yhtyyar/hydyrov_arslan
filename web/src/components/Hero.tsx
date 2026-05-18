@@ -74,7 +74,7 @@ export function Hero() {
           <div className="relative">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl ring-4 ring-white" style={{ aspectRatio: '4/5' }}>
               <img
-                src="./images/doctor.webp"
+                src="/hydyrov_arslan/images/doctor.webp"
                 alt="Арслан Хыдыров — стоматолог"
                 className="w-full h-full object-cover object-top"
               />
